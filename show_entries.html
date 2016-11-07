@@ -1,0 +1,37 @@
+
+Line 4: Add following line:
+    {% include 'del_form.html' %}
+
+
+Line 17: Add following lines
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"
+            type="text/javascript"></script>
+
+
+Line 31: Add following lines:
+    $("button").click(function () {
+        var s=(this.id).split(",");
+        $('#del_monkey').val(s[0]);
+        $('#del_violation').val(s[1]);
+        $('#del_object').val(s[2]);
+        $('#del_expiration').val(s[3]);
+        $('#del_riskid').val(s[4]);
+        $('#del_description').val(s[5]);
+    });
+
+
+
+Replace <td> tag in Line 77 by:
+<td>
+    <button  id="{{ entry[0] }},{{ entry[1] }},{{ entry[2] }},{{ entry[3] }},{{ entry[4] }},{{ entry[5] }}"
+ class="btn btn-success" data-toggle="modal" data-target="#myModal_delete"> Delete
+    </button>
+</td>
